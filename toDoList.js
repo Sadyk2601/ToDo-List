@@ -1,7 +1,9 @@
+// let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let taskForm = document.getElementById("taskForm");
 let taskLi = document.getElementById("tasks");
-let data = [];
+let data = JSON.parse(localStorage.getItem("data")) || [];
 let status1 = document.getElementById("status");
+renderData();
 taskForm.addEventListener("submit", () => {
   event.preventDefault();
   let arrayTask = document.getElementById("taskText").value;
@@ -9,6 +11,7 @@ taskForm.addEventListener("submit", () => {
   if (arrayTask) {
     let tasks = { text: arrayTask, completed: false };
     data.push(tasks);
+    saveTasks();
     taskForm.reset();
     renderData();
     status1.textContent = "Todo Item Created Successfully.";
@@ -43,6 +46,7 @@ function renderData() {
       taskLi.append(li);
       if (task.completed) {
         li.classList = "completed";
+        saveTasks();
       }
     }
   });
@@ -50,6 +54,7 @@ function renderData() {
 function deleteContact(index) {
   data.splice(index, 1);
   renderData();
+  saveTasks();
 }
 function changeData(index) {
   let putText = document.getElementById("taskText").value;
@@ -73,4 +78,7 @@ function completeTask(index) {
     data[index].completed = false;
   }
   renderData();
+}
+function saveTasks() {
+  localStorage.setItem("data", JSON.stringify(data));
 }
