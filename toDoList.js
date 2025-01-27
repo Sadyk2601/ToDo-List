@@ -1,4 +1,3 @@
-// let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let taskForm = document.getElementById("taskForm");
 let taskLi = document.getElementById("tasks");
 let data = JSON.parse(localStorage.getItem("data")) || [];
