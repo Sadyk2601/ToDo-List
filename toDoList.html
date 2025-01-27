@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="toDoList.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div
+        style="
+          height: 40px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <span class="title">ToDo List</span>
+        <div style="margin-top: 40px">
+          <img
+            style="height: 30px; width: 40px"
+            src="https://sun1-23.userapi.com/impf/xYd_tzI3XgLXk_cNiRXClNhhgxHozrpEpzLvIQ/lKW3JKGW9t0.jpg?size=135x92&quality=95&crop=0,100,640,435&sign=1f74912f5ae203c1503c444119bcaae3"
+            alt=""
+          />
+        </div>
+      </div>
+      <form id="taskForm">
+        <div style="margin: 25px" class="inputAndButtonItems">
+          <input
+            id="taskText"
+            class="inputText"
+            type="text"
+            placeholder="Add your task"
+          />
+          <button type="submit" class="button1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="30px"
+              viewBox="0 -960 960 960"
+              width="30px"
+              fill="#000000"
+            >
+              <path
+                d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </form>
+      <p id="status" class="statusText"></p>
+      <div></div>
+      <ul id="tasks" class="tasks"></ul>
+    </div>
+  </body>
+  <script src="toDoList.js"></script>
+</html>
